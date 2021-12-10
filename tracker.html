@@ -1,0 +1,324 @@
+<html lang="en">
+
+<head>
+    <style>
+        .gm-control-active>img {
+            box-sizing: content-box;
+            display: none;
+            left: 50%;
+            pointer-events: none;
+            position: absolute;
+            top: 50%;
+            transform: translate(-50%, -50%)
+        }
+
+        .gm-control-active>img:nth-child(1) {
+            display: block
+        }
+
+        .gm-control-active:hover>img:nth-child(1),
+        .gm-control-active:active>img:nth-child(1),
+        .gm-control-active:disabled>img:nth-child(1) {
+            display: none
+        }
+
+        .gm-control-active:hover>img:nth-child(2),
+        .gm-control-active:active>img:nth-child(3),
+        .gm-control-active:disabled>img:nth-child(4) {
+            display: block
+        }
+    </style>
+    <link type="text/css" rel="stylesheet"
+        href="https://fonts.googleapis.com/css?family=Roboto:300,400,500,700|Google+Sans_old:400,500,700|Google+Sans+Text:400">
+    <link type="text/css" rel="stylesheet"
+        href="https://fonts.googleapis.com/css?family=Google+Sans+Text:400&amp;text=%E2%86%90%E2%86%92%E2%86%91%E2%86%93">
+    <link rel="stylesheet" href="index.css">
+    <style>
+        .gm-ui-hover-effect {
+            opacity: .6
+        }
+
+        .gm-ui-hover-effect:hover {
+            opacity: 1
+        }
+    </style>
+    <style>
+        .gm-style .gm-style-cc a,
+        .gm-style .gm-style-cc button,
+        .gm-style .gm-style-cc span,
+        .gm-style .gm-style-mtc div {
+            font-size: 10px;
+            box-sizing: border-box
+        }
+
+        .gm-style .gm-style-cc a,
+        .gm-style .gm-style-cc button,
+        .gm-style .gm-style-cc span {
+            outline-offset: 3px
+        }
+    </style>
+    <style>
+        @media print {
+
+            .gm-style .gmnoprint,
+            .gmnoprint {
+                display: none
+            }
+        }
+
+        @media screen {
+
+            .gm-style .gmnoscreen,
+            .gmnoscreen {
+                display: none
+            }
+        }
+    </style>
+    <style>
+        .gm-style-moc {
+            background-color: rgba(0, 0, 0, 0.45);
+            pointer-events: none;
+            text-align: center;
+            transition: opacity ease-in-out
+        }
+
+        .gm-style-mot {
+            color: white;
+            font-family: Roboto, Arial, sans-serif;
+            font-size: 22px;
+            margin: 0;
+            position: relative;
+            top: 50%;
+            transform: translateY(-50%);
+            -webkit-transform: translateY(-50%);
+            -ms-transform: translateY(-50%)
+        }
+    </style>
+    <style>
+        .gm-style img {
+            max-width: none;
+        }
+
+        .gm-style {
+            font: 400 11px Roboto, Arial, sans-serif;
+            text-decoration: none;
+        }
+    </style>
+    <meta charset="utf-8">
+    <link rel="icon" href="http://static.skaip.org/img/emoticons/180x180/f6fcff/fire.gif">
+    <meta name="viewport" content="width=device-width,initial-scale=1">
+    <link href="https://unpkg.com/tailwindcss@^2/dist/tailwind.min.css" rel="stylesheet">
+    <title>FIREout-WildFire Tracker</title>
+    <link href="/Wildfire-Tracker/static/css/main.f4fbd82f.chunk.css" rel="stylesheet">
+    <script id="__googleMapsScriptId" type="text/javascript"
+        src="https://maps.googleapis.com/maps/api/js?callback=__googleMapsCallback&amp;key=AIzaSyBuJ7B77GBTNfSZwqv9PVSFSme7Eh8buC0"
+        defer="" async=""></script>
+    <script type="text/javascript" charset="UTF-8"
+        src="https://maps.googleapis.com/maps-api-v3/api/js/47/3/common.js"></script>
+    <script type="text/javascript" charset="UTF-8"
+        src="https://maps.googleapis.com/maps-api-v3/api/js/47/3/util.js"></script>
+    <script type="text/javascript" charset="UTF-8"
+        src="https://maps.googleapis.com/maps-api-v3/api/js/47/3/map.js"></script>
+    <script type="text/javascript" charset="UTF-8"
+        src="https://maps.googleapis.com/maps-api-v3/api/js/47/3/overlay.js"></script>
+    <script type="text/javascript" charset="UTF-8"
+        src="https://maps.googleapis.com/maps-api-v3/api/js/47/3/stats.js"></script>
+    <script type="text/javascript" charset="UTF-8"
+        src="https://maps.googleapis.com/maps-api-v3/api/js/47/3/onion.js"></script>
+    <script type="text/javascript" charset="UTF-8"
+        src="https://maps.googleapis.com/maps-api-v3/api/js/47/3/controls.js"></script>
+</head>
+
+<body>
+    <div id="root">
+        <div class="App">
+            <div>
+                <header class="text-gray-600 body-font">
+                    <div class="container mx-auto flex flex-wrap p-5 flex-col md:flex-row items-center"><a
+                            class="flex title-font font-medium items-center text-gray-900 mb-4 md:mb-0">
+                            <img
+                                class="logo"
+                                src="https://www.pinclipart.com/picdir/middle/565-5659650_flame-fire-blog-clip-art-animated-fire-gif.png"
+                                alt="logo"><span class="ml-3 text-xl"><a href="/">FIREout</a></span></a>
+                        <nav class="md:ml-auto flex flex-wrap items-center text-base justify-center"><a
+                                class="mr-5 hover:text-gray-900"><a href="/">Home</a></a><a
+                                class="mr-5 hover:text-gray-900"><a href="#">About</a></a></nav>
+                    </div>
+                </header>
+            </div>
+            <section class="text-gray-600 body-font">
+                <div class="container mx-auto flex px-5 py-24 md:flex-row flex-col items-center">
+                    <div
+                        class="lg:flex-grow md:w-1/2 lg:pr-24 md:pr-16 flex flex-col md:items-start md:text-left mb-16 md:mb-0 items-center text-center">
+                        <h1 class="title-font sm:text-4xl text-3xl mb-4 font-medium text-gray-900">WildFires<br
+                                class="hidden lg:inline-block">Destroyed.Endangered.Burned</h1>
+                        <p class="mb-8 leading-relaxed">Climate change is increasing extreme fire conditions, and
+                            wildfires in turn are releasing carbon that can heat the planet But climate change has
+                            increased the probability of extreme hot and dry conditions that give rise to bigger, faster
+                            moving and more intense wildfires.</p>
+                        <div class="flex justify-center"><button
+                                class="inline-flex text-white bg-indigo-500 border-0 py-2 px-6 focus:outline-none hover:bg-indigo-600 rounded text-lg"><a
+                                    href="#">Live Tracker</a></button><a
+                                href="https://en.wikipedia.org/wiki/Wildfire" target="_blank"><button
+                                    class="ml-4 inline-flex text-gray-700 bg-gray-100 border-0 py-2 px-6 focus:outline-none hover:bg-gray-200 rounded text-lg">Learn
+                                    more</button></a></div>
+                    </div>
+                    <div class="lg:max-w-lg lg:w-full md:w-1/2 w-5/6"><img class="object-cover object-center rounded"
+                            src="https://i.pinimg.com/originals/91/db/c6/91dbc6a131748e9c033fdc6b81418701.gif"
+                            alt="hero" height="2000px" width="2000px"></div>
+                </div>
+            </section>
+            <section class="text-gray-600 body-font">
+                <div class="container mx-auto flex px-5 py-24 md:flex-row flex-col items-center">
+                    <div class="lg:max-w-lg lg:w-full md:w-1/2 w-5/6 mb-10 md:mb-10"><img
+                            class="object-cover object-center rounded" alt="fire2"
+                            src="https://media0.giphy.com/media/MbFfMeic2KPJXT73nO/giphy.gif" height="2000px"
+                            width="3000px"></div>
+                    <div
+                        class="lg:flex-grow md:w-1/2 lg:pl-24 md:pl-16 flex flex-col md:items-start md:text-left items-center text-center">
+                        <h1 class="title-font sm:text-4xl text-3xl mb-4 font-medium text-gray-900">Ask The Law Maker<br
+                                class="hidden lg:inline-block">Question your law maker against Wildfires.</h1>
+                        <p class="mb-8 leading-relaxed">See the latest trends and takes action,get aquainted with News.
+                        </p>
+                        <div class="flex justify-center"><a
+                                href="https://www.theguardian.com/environment/climate-change" target="_blank"><button
+                                    class="inline-flex text-white bg-indigo-500 border-0 py-2 px-6 focus:outline-none hover:bg-indigo-600 rounded text-lg">Latest
+                                    News</button></a></div>
+                    </div>
+                </div>
+            </section>
+            <section class="text-gray-600 body-font">
+                <div class="container px-5 py-24 mx-auto">
+                    <div class="flex flex-col text-center w-full mb-20">
+                        <h2 class="text-xs text-indigo-500 tracking-widest font-medium title-font mb-1">MAYBE WE CAN
+                        </h2>
+                        <h1 class="sm:text-3xl text-2xl font-medium title-font mb-4 text-gray-900">What should we do?
+                        </h1>
+                        <p class="lg:w-2/3 mx-auto leading-relaxed text-base">Wildfires threaten lives, property and our
+                            precious natural resources. Whether you’re a first-time visitor or a public land pro, you
+                            play a valuable role in preventing wildfires and protecting our natural resources.</p>
+                    </div>
+                </div>
+            </section>
+            <section class="text-gray-600 body-font">
+                <div class="container px-5 py-24 mx-auto">
+                    <div
+                        class="flex items-center lg:w-3/5 mx-auto border-b pb-10 mb-10 border-gray-200 sm:flex-row flex-col">
+                        <div
+                            class="sm:w-32 sm:h-32 h-20 w-20 sm:mr-10 inline-flex items-center justify-center rounded-full bg-indigo-100 text-indigo-500 flex-shrink-0">
+                            <svg fill="none" stroke="currentColor" stroke-linecap="round" stroke-linejoin="round"
+                                stroke-width="2" class="sm:w-16 sm:h-16 w-10 h-10" viewBox="0 0 24 24">
+                                <path d="M22 12h-4l-3 9L9 3l-3 9H2"></path>
+                            </svg></div>
+                        <div class="flex-grow sm:text-left text-center mt-6 sm:mt-0">
+                            <h2 class="text-gray-900 text-lg title-font font-medium mb-2">The Initiator</h2>
+                            <p class="leading-relaxed text-base">Have a close look on Climate Change.</p><a
+                                class="mt-3 text-indigo-500 inline-flex items-center"
+                                href="https://en.wikipedia.org/wiki/Climate_change" target="_blank">Learn More<svg
+                                    fill="none" stroke="currentColor" stroke-linecap="round" stroke-linejoin="round"
+                                    stroke-width="2" class="w-4 h-4 ml-2" viewBox="0 0 24 24">
+                                    <path d="M5 12h14M12 5l7 7-7 7"></path>
+                                </svg></a>
+                        </div>
+                    </div>
+                    <div
+                        class="flex items-center lg:w-3/5 mx-auto border-b pb-10 mb-10 border-gray-200 sm:flex-row flex-col">
+                        <div class="flex-grow sm:text-left text-center mt-6 sm:mt-0">
+                            <h2 class="text-gray-900 text-lg title-font font-medium mb-2">The Catalyzer</h2>
+                            <p class="leading-relaxed text-base">Avoid Potential flammable conditions.</p><a
+                                class="mt-3 text-indigo-500 inline-flex items-center"
+                                href="https://www.doi.gov/blog/10-tips-prevent-wildfires" target="_blank">Learn More<svg
+                                    fill="none" stroke="currentColor" stroke-linecap="round" stroke-linejoin="round"
+                                    stroke-width="2" class="w-4 h-4 ml-2" viewBox="0 0 24 24">
+                                    <path d="M5 12h14M12 5l7 7-7 7"></path>
+                                </svg></a>
+                        </div>
+                        <div
+                            class="sm:w-32 sm:order-none order-first sm:h-32 h-20 w-20 sm:ml-10 inline-flex items-center justify-center rounded-full bg-indigo-100 text-indigo-500 flex-shrink-0">
+                            <svg fill="none" stroke="currentColor" stroke-linecap="round" stroke-linejoin="round"
+                                stroke-width="2" class="sm:w-16 sm:h-16 w-10 h-10" viewBox="0 0 24 24">
+                                <circle cx="6" cy="6" r="3"></circle>
+                                <circle cx="6" cy="18" r="3"></circle>
+                                <path d="M20 4L8.12 15.88M14.47 14.48L20 20M8.12 8.12L12 12"></path>
+                            </svg></div>
+                    </div>
+                    <div class="flex items-center lg:w-3/5 mx-auto sm:flex-row flex-col">
+                        <div
+                            class="sm:w-32 sm:h-32 h-20 w-20 sm:mr-10 inline-flex items-center justify-center rounded-full bg-indigo-100 text-indigo-500 flex-shrink-0">
+                            <svg fill="none" stroke="currentColor" stroke-linecap="round" stroke-linejoin="round"
+                                stroke-width="2" class="sm:w-16 sm:h-16 w-10 h-10" viewBox="0 0 24 24">
+                                <path d="M20 21v-2a4 4 0 00-4-4H8a4 4 0 00-4 4v2"></path>
+                                <circle cx="12" cy="7" r="4"></circle>
+                            </svg></div>
+                        <div class="flex-grow sm:text-left text-center mt-6 sm:mt-0">
+                            <h2 class="text-gray-900 text-lg title-font font-medium mb-2">The Post</h2>
+                            <p class="leading-relaxed text-base">Always have the proper training.</p><a
+                                class="mt-3 text-indigo-500 inline-flex items-center"
+                                href="https://laist.com/news/how-to-survive-a-wildfire-tips" target="_blank">Learn
+                                More<svg fill="none" stroke="currentColor" stroke-linecap="round"
+                                    stroke-linejoin="round" stroke-width="2" class="w-4 h-4 ml-2" viewBox="0 0 24 24">
+                                    <path d="M5 12h14M12 5l7 7-7 7"></path>
+                                </svg></a>
+                        </div>
+                    </div>
+                </div>
+            </section>
+            <section class="text-gray-600 body-font">
+                <div class="container px-5 py-24 mx-auto">
+                    <div class="flex flex-wrap -m-4">
+                        <div class="lg:w-1/3 lg:mb-0 mb-6 p-4">
+                            <div class="h-full text-center"><img alt="testimonial"
+                                    class="w-20 h-20 mb-8 object-cover object-center rounded-full inline-block border-2 border-gray-200 bg-gray-100"
+                                    src="https://static.toiimg.com/photo/81061037.cms">
+                                <p class="leading-relaxed">It’s not a matter of just fighting for our future, it’s also
+                                    worth fighting for our present. We’re experiencing the climate crisis every day.</p>
+                                <span class="inline-block h-1 w-10 rounded bg-indigo-500 mt-6 mb-4"></span>
+                                <h2 class="text-gray-900 font-medium title-font tracking-wider text-sm">Disha Ravi</h2>
+                                <p class="text-gray-500">Climate Change Activist</p>
+                            </div>
+                        </div>
+                        <div class="lg:w-1/3 lg:mb-0 mb-6 p-4">
+                            <div class="h-full text-center"><img alt="testimonial"
+                                    class="w-20 h-20 mb-8 object-cover object-center rounded-full inline-block border-2 border-gray-200 bg-gray-100"
+                                    src="http://t1.gstatic.com/licensed-image?q=tbn:ANd9GcTrkahic9kYMnIKcAXAQp6c3AFs4ESOnv1gGiVXV3wIgk8HrmHNdw0p6Akg-M20">
+                                <p class="leading-relaxed">"Climate Warrior" a campaign that aims to highlight the work
+                                    of various environmental communities across India.</p><span
+                                    class="inline-block h-1 w-10 rounded bg-indigo-500 mt-6 mb-4"></span>
+                                <h2 class="text-gray-900 font-medium title-font tracking-wider text-sm">Bhumi Pednekar
+                                </h2>
+                                <p class="text-gray-500">Bollywood Actress</p>
+                            </div>
+                        </div>
+                        <div class="lg:w-1/3 lg:mb-0 p-4">
+                            <div class="h-full text-center"><img alt="testimonial"
+                                    class="w-20 h-20 mb-8 object-cover object-center rounded-full inline-block border-2 border-gray-200 bg-gray-100"
+                                    src="https://encrypted-tbn1.gstatic.com/images?q=tbn:ANd9GcT6-x1zMGu5UpoHrpssIx99wpp0VZXhuDnoiuY8ahiRMROzC4n_">
+                                <p class="leading-relaxed">Right here, right now is where we draw the line. The world is
+                                    waking up. And change is coming whether you like it or not.</p><span
+                                    class="inline-block h-1 w-10 rounded bg-indigo-500 mt-6 mb-4"></span>
+                                <h2 class="text-gray-900 font-medium title-font tracking-wider text-sm">Greta Thunberg
+                                </h2>
+                                <p class="text-gray-500">Climate Change Activist</p>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </section><br>
+            <footer class="text-gray-600 body-font">
+                <div class="container px-5 py-8 mx-auto flex items-center sm:flex-row flex-col"><a
+                        class="flex title-font font-medium items-center md:justify-start justify-center text-gray-900"><span
+                            class="ml-3 text-xl"><img class="logo"
+                                src="https://www.pinclipart.com/picdir/middle/565-5659650_flame-fire-blog-clip-art-animated-fire-gif.png"
+                                alt="logo">FIREout</span></a>
+                    <p
+                        class="text-sm text-gray-500 sm:ml-4 sm:pl-4 sm:border-l-2 sm:border-gray-200 sm:py-2 sm:mt-0 mt-4">
+                        © 2021 Sritam Kumar Mohanty</p>
+                        
+                </div>
+            </footer>
+        </div>
+    </div>
+    <script>!function (e) { function r(r) { for (var n, i, l = r[0], f = r[1], a = r[2], c = 0, s = []; c < l.length; c++)i = l[c], Object.prototype.hasOwnProperty.call(o, i) && o[i] && s.push(o[i][0]), o[i] = 0; for (n in f) Object.prototype.hasOwnProperty.call(f, n) && (e[n] = f[n]); for (p && p(r); s.length;)s.shift()(); return u.push.apply(u, a || []), t() } function t() { for (var e, r = 0; r < u.length; r++) { for (var t = u[r], n = !0, l = 1; l < t.length; l++) { var f = t[l]; 0 !== o[f] && (n = !1) } n && (u.splice(r--, 1), e = i(i.s = t[0])) } return e } var n = {}, o = { 1: 0 }, u = []; function i(r) { if (n[r]) return n[r].exports; var t = n[r] = { i: r, l: !1, exports: {} }; return e[r].call(t.exports, t, t.exports, i), t.l = !0, t.exports } i.m = e, i.c = n, i.d = function (e, r, t) { i.o(e, r) || Object.defineProperty(e, r, { enumerable: !0, get: t }) }, i.r = function (e) { "undefined" != typeof Symbol && Symbol.toStringTag && Object.defineProperty(e, Symbol.toStringTag, { value: "Module" }), Object.defineProperty(e, "__esModule", { value: !0 }) }, i.t = function (e, r) { if (1 & r && (e = i(e)), 8 & r) return e; if (4 & r && "object" == typeof e && e && e.__esModule) return e; var t = Object.create(null); if (i.r(t), Object.defineProperty(t, "default", { enumerable: !0, value: e }), 2 & r && "string" != typeof e) for (var n in e) i.d(t, n, function (r) { return e[r] }.bind(null, n)); return t }, i.n = function (e) { var r = e && e.__esModule ? function () { return e.default } : function () { return e }; return i.d(r, "a", r), r }, i.o = function (e, r) { return Object.prototype.hasOwnProperty.call(e, r) }, i.p = "/Wildfire-Tracker/"; var l = this.webpackJsonpwildfire = this.webpackJsonpwildfire || [], f = l.push.bind(l); l.push = r, l = l.slice(); for (var a = 0; a < l.length; a++)r(l[a]); var p = f; t() }([])</script>
+</body>
+
+</html>
